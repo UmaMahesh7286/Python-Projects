@@ -1,0 +1,120 @@
+<div class="outer">
+  <div class="searchPanel">
+      <div class="searchPanel_tablist">
+          <div class="searchPanel_tablist1">
+              <p class="searchPanel_tabText">Book a flight</p>
+              <div class="searchpanel_tab_border"></div>
+          </div>
+      </div>
+      <div class="searchPanel_body">
+          <div class="flightSearchPanel">
+              <div class="flightSearchPanel_header">
+                  <mat-radio-group aria-label="Select an option">
+                      <mat-radio-button style="margin: 0.5rem 1rem;" value="One Way" aria-checked="true"
+                          [checked]="isChecked" (click)='radioChange(true)'>One Way</mat-radio-button>
+                      <mat-radio-button style="margin: 0.5rem 1rem;" value="Two Way" (click)='radioChange(false)'>Two
+                          Way</mat-radio-button>
+                  </mat-radio-group>
+              </div>
+          </div>
+          <form [formGroup]="searchForm" (ngSubmit)="submit()">
+              <div class="bookingSearch_upper">
+                  <div class="searchLocation">
+                      <div class="fromSearchLocation">
+                          <p-dropdown [options]="airport_list" formControlName="fromLocation" optionLabel="city"
+                              [filter]="true" filterBy="city" [showClear]="true" placeholder="Select Source Airport"
+                              [(ngModel)]="searchFlight.fromLocation">
+                              <ng-template pTemplate="selectedItem" >
+                                  <div class="flex align-items-center gap-2"
+                                      *ngIf="searchForm.get('fromLocation').value">
+                                      <div>{{ searchForm.get('fromLocation').value.city }}</div>
+                                  </div>
+                              </ng-template>
+                              <ng-template let-airport pTemplate="item">
+                                  <div class="flex align-items-center gap-2">
+                                      <div style="font-weight: bolder;">{{ airport.airport_name }}</div>
+                                      <div>{{ airport.city }}</div>
+                                  </div>
+                              </ng-template>
+                          </p-dropdown>
+                      </div>
+                      <div style=" display: flex;align-items:center;align-self: stretch;padding-top: 2rem;">
+                          <i class="fa-solid fa-arrow-right-arrow-left" style="color: #0fbcbf"></i>
+                      </div>
+                      <div class="fromSearchLocation">
+                          <p-dropdown [options]="airport_list" formControlName="toLocation" optionLabel="city"
+                              [filter]="true" filterBy="city" [showClear]="true"
+                              placeholder="Select Destination Airport" [(ngModel)]="searchFlight.toLocation">
+                              <ng-template pTemplate="selectedItem">
+                                  <div class="flex align-items-center gap-2"
+                                      *ngIf="searchForm.get('toLocation').value">
+                                      <div>{{ searchForm.get('toLocation').value.city }}</div>
+                                  </div>
+                              </ng-template>
+                              <ng-template let-airport pTemplate="item">
+                                  <div class="flex align-items-center gap-2"
+                                      *ngIf="airport.city !== selectedSourceAirport?.city">
+                                      <div style="font-weight: bolder;">{{ airport.airport_name }}</div>
+                                      <div>{{ airport.city }}</div>
+                                  </div>
+                              </ng-template>
+
+                          </p-dropdown>
+
+                      </div>
+                  </div>
+                  <div>
+                      <mat-form-field appearance="fill">
+                          <mat-label>Departure date</mat-label>
+                          <mat-datepicker #picker></mat-datepicker>
+                          <input name="departureDate" matInput [matDatepicker]="picker"
+                              [(ngModel)]="searchFlight.departureDate" formControlName="departureDate" [min]="minDate"
+                              [max]="maxDate">
+                          <mat-error
+                              *ngIf="searchForm.get('departureDate')!.hasError('required') && searchForm.get('departureDate')!.touched">
+                              Departure date is required.
+                          </mat-error>
+                          <mat-hint>MM/DD/YYYY</mat-hint>
+                          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                      </mat-form-field>
+
+                  </div>
+                  <div *ngIf="!isChecked">
+                      <mat-form-field appearance="fill">
+                          <mat-label>Return date</mat-label>
+                          <mat-datepicker #picker></mat-datepicker>
+                          <input name="returnDate" matInput [matDatepicker]="picker"
+                              [(ngModel)]="searchFlight.returnDate" formControlName="returnDate" [min]="minDate"
+                              [max]="maxDate">
+                          <mat-error
+                              *ngIf="searchForm.get('returnDate')!.hasError('required') && searchForm.get('returnDate')!.touched">
+                              Return date is required.
+                          </mat-error>
+                          <mat-hint>MM/DD/YYYY</mat-hint>
+                          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                      </mat-form-field>
+                  </div>
+                  <div class="passengersCount">
+                      <mat-form-field>
+                          <mat-label>Passenger(s)</mat-label>
+                          <mat-select name="passengers" [(value)]="selected" [(ngModel)]="searchFlight.passengers"
+                              formControlName="passengers">
+                              <mat-option value="1">1</mat-option>
+                              <mat-option value="2">2</mat-option>
+                              <mat-option value="3">3</mat-option>
+                          </mat-select>
+                          <mat-error
+                              *ngIf="searchForm.get('passengers')!.hasError('required') && searchForm.get('passengers')!.touched">
+                              Number of passengers is required.
+                          </mat-error>
+                      </mat-form-field>
+                  </div>
+              </div>
+              <div class="bookingSearch_lower">
+                  <button mat-raised-button type="submit" style="border-top-left-radius: 10px;border-bottom-left-radius: 10px;border-bottom-right-radius: 10px;border-top-right-radius: 0px;height: 4em;
+                      width: 10em;" color="primary" [disabled]="searchForm.invalid">Search</button>
+              </div>
+          </form>
+      </div>
+  </div>
+</div>

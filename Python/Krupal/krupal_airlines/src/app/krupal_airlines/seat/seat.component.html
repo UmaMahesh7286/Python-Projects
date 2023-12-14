@@ -1,0 +1,63 @@
+<div  >
+
+  <img src="../assets/images/top.jpg" alt="" width="500rem"  style="margin-left: 17rem;" >
+
+
+
+  <div id="inside-displayflex" style="display: flex;">
+    <img src="../assets/images/left side.jpg" alt="" width="300rem">
+
+    <div style="display: flex;">
+
+
+
+       <div style="display: flex;">
+        <div style="display: -webkit-box">
+           <div class="card "style="display:table-caption">
+               <p-selectButton [options]="leftOptions1" [(ngModel)]="value" [multiple]="true" optionLabel="name" optionValue=value (click)="seatnum(value)" ></p-selectButton>
+           </div>
+       </div>
+       <div style="display: -webkit-box">
+          <div class="card "style="display:table-caption">
+               <p-selectButton [options]="leftOptions2" [(ngModel)]="value" [multiple]="true" optionLabel="name" optionValue=value (click)="seatnum(value)"></p-selectButton>
+         </div>
+        </div>
+        <div style="display: -webkit-box">
+          <div class="card "style="display:table-caption">
+               <p-selectButton [options]="leftOptions3" [(ngModel)]="value" [multiple]="true" optionLabel="name" optionValue=value (click)="seatnum(value)" ></p-selectButton>
+         </div>
+        </div>
+     </div>
+
+
+          <div style="width:30px;"></div>
+
+
+     <div style="display: flex;">
+      <div style="display: -webkit-box">
+         <div class="card "style="display:table-caption">
+             <p-selectButton [options]="rightOptions1" [(ngModel)]="value" [multiple]="true" optionLabel="name" optionValue=value (click)="seatnum(value)"></p-selectButton>
+         </div>
+     </div>
+     <div style="display: -webkit-box">
+        <div class="card "style="display:table-caption">
+         <p-selectButton [options]="rightOptions2" [(ngModel)]="value" [multiple]="true" optionLabel="name" optionValue=value (click)="seatnum(value)"></p-selectButton>
+       </div>
+      </div>
+      <div style="display: -webkit-box">
+        <div class="card "style="display:table-caption">
+         <p-selectButton [options]="rightOptions3" [(ngModel)]="value" [multiple]="true" optionLabel="name" optionValue=value (click)="seatnum(value)"></p-selectButton>
+       </div>
+      </div>
+   </div>
+
+
+
+  </div>
+
+
+    <img src="../assets/images/right-side.jpg" alt="" width="300rem" >
+  </div>
+
+  <img src="../assets/images/bottom.jpg" alt="" width="460rem" style="margin-left: 18.55rem;">
+</div>

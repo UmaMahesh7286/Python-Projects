@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>KrupalAirlines</title>
+  <base href="/">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+    integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+  <!-- Add Bootstrap CSS CDN link in the head section of your HTML -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <!-- Font Awesome -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet" />
+  <!-- MDB -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.4.0/mdb.min.css" rel="stylesheet" />
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.4.0/mdb.min.js"></script>
+  <!-- Add Bootstrap JS CDN link at the bottom of your HTML -->
+  <!-- <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script> -->
+<script>
+    const dropdowns = document.querySelectorAll('.dropbtn')
+    dropdowns.forEach(dropdown => {
+      dropdown.addEventListener('click', () => {
+        dropdown.classList.toggle('active');
+        const content = dropdown.querySelector('.dropdown-content');
+        content.classList.toggle('show');
+      });
+    });
+
+    window.addEventListener('click', (event) => {
+      if (!event.target.matches('.dropbtn')) {
+        const dropdowns = document.querySelectorAll('.dropbtn');
+        dropdowns.forEach(dropdown => {
+          const content = dropdown.querySelector('.dropdown-content');
+          if (content.classList.contains('show')) {
+            dropdown.classList.remove('active');
+            content.classList.remove('show');
+          }
+        });
+      }
+    });
+
+
+  document.addEventListener("DOMContentLoaded", function() {
+  var dropdownToggleList = [].slice.call(document.querySelectorAll('.dropdown-toggle'));
+  var dropdownMenuList = [].slice.call(document.querySelectorAll('.dropdown-menu'));
+
+  dropdownToggleList.forEach(function(dropdownToggle) {
+    var dropdownMenu = dropdownToggle.nextElementSibling;
+
+    dropdownToggle.addEventListener('mouseenter', function() {
+      closeAllDropdowns();
+      dropdownMenu.style.display = 'block';
+    });
+
+    dropdownToggle.addEventListener('mouseleave', function() {
+      dropdownMenu.style.display = '';
+    });
+  });
+
+  // Close all dropdowns except the currently hovered one
+  function closeAllDropdowns() {
+    dropdownMenuList.forEach(function(dropdownMenu) {
+      if (dropdownMenu.style.display === 'block') {
+        dropdownMenu.style.display = '';
+      }
+    });
+  }
+});
+
+
+  </script>
+
+
+</head>
+
+<body>
+  <app-root></app-root>
+</body>
+
+</html>

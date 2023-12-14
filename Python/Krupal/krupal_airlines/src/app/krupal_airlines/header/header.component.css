@@ -1,0 +1,29 @@
+.navbar-brand {
+  display: flex;
+  align-items: center;
+}
+
+.button-container {
+font-size: 0.875rem;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  display: flex;
+  align-items: center;
+}
+
+.button-container .btn {
+  margin-right: 10px;
+  background-color: transparent;
+  border-color: transparent;
+  color: rgb(9, 9, 9);
+  padding: 0.5rem;
+  box-shadow: none;
+  font-family: Roboto!important
+}
+
+.slogan {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+

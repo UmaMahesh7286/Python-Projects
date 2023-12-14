@@ -1,0 +1,41 @@
+<mat-card
+  color="primary"
+  class="card mat-elevation-z8"
+
+>
+<form class="example-form" [formGroup]="myForm" (ngSubmit)="addAirport()">
+  <mat-card-content>
+    <h2 style="text-align: center">
+      Add Airport
+    </h2>
+    <div class="form-group">
+      <div class="row">
+        <div class="col-75 form-group labelname">
+          <label for="airport" style="margin-right: 10px"><b>Airport Name:</b></label>
+        </div>
+        <div class="col-75 form-group">
+          <input class="form-control" type="text" formControlName="airport_name" placeholder="Enter name here" [ngClass]="{'is-invalid':(submitted && f.airport_name.errors) ||(f.airport_name.touched && f.airport_name.errors)}"/>
+          <div *ngIf="(submitted && f.airport_name.errors) || (f.airport_name.touched && f.airport_name.errors)" class="invalid-feedback">
+              <div *ngIf="f.airport_name.errors?.required">Airport Name required</div>
+          </div>
+        </div>
+      </div>
+      <div class="row form-group">
+        <div class="col-75 form-group labelname">
+          <label for="airport" style="margin-right: 10px"><b>City:</b></label>
+        </div>
+        <div class="col-75 form-group">
+          <input class="form-control" type="text" formControlName="city" placeholder="Enter name here" [ngClass]="{'is-invalid':(submitted && f.city.errors) ||(f.city.touched && f.city.errors)}" />
+          <div *ngIf="(submitted && f.city.errors) || (f.city.touched && f.city.errors)" class="invalid-feedback">
+            <div *ngIf="f.city.errors?.required">City required</div>
+        </div>
+        </div>
+      </div>
+      <div class="text-center">
+        <p-toast position="top-center"></p-toast>
+        <input class="btn btn-success btn-sm submit" type="submit" label="Top Center" value="Add Airport" />
+      </div>
+    </div>
+  </mat-card-content>
+</form>
+</mat-card>

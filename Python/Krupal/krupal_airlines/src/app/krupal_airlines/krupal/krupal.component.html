@@ -1,0 +1,60 @@
+<krupal-header style="z-index: 5;position: fixed;width: 100%;"></krupal-header>
+<div>
+  <br>
+<owl-carousel-o [options]="customOptions" >
+  <ng-template carouselSlide><img src="../../../assets/images/plane1.jpg" class="d-block w-100" style="height: 90vh;" alt=""></ng-template>
+  <ng-template carouselSlide><img src="../../../assets/images/airport.png"  class="d-block w-100"style="height: 90vh;"  alt=""></ng-template>
+  <ng-template carouselSlide><img src="../../../assets/images/nightplane.jpg"class="d-block w-100" style="height: 90vh;"  alt=""></ng-template>
+  <ng-template carouselSlide><img src="../../../assets/images/seats.jpg"class="d-block w-100" style="height: 90vh;"  alt=""></ng-template>
+</owl-carousel-o>
+<search-krupal style="display: block ; z-index: 1;" class="search"></search-krupal>
+</div>
+
+
+
+<!-- <button (click)="usersarr()"> click me</button>
+{{users}} -->
+<div class="cities">
+    <div class="heading1">
+        <p>Explore our growing network</p>
+    </div>
+    <div class="citybody">
+        <div class="card">
+            <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
+                <img src="../../../assets/images/BangalorePalace.jpg" class="img-fluid"
+                    style="height: 17rem;background-size: cover;" />
+                <div class="card-img-overlay">
+                    <h5 class="card-title" style="color:white;">Bengaluru</h5>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
+                <img src="../../../assets/images/Charminar.jpg" class="img-fluid"
+                    style="height: 17rem;background-size: cover;" />
+                <div class="card-img-overlay">
+                    <h5 class="card-title" style="color:white;">Hyderabad</h5>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
+                <img src="../../../assets/images/india gate.jpg" class="img-fluid"
+                    style="height: 17rem;background-size: cover;" />
+                <div class="card-img-overlay">
+                    <h5 class="card-title" style="color:white;">Delhi</h5>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
+                <img src="../../../assets/images/mumbai.jpg" class="img-fluid"
+                    style="height: 17rem;background-size: cover;" />
+                <div class="card-img-overlay">
+                    <h5 class="card-title" style="color:white;">Mumbai</h5>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div><krupal-footer></krupal-footer></div>

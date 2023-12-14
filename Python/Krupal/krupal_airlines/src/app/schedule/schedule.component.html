@@ -1,0 +1,39 @@
+<i  type="button" (click)="refreshComponent()" class="fa-solid fa-arrows-rotate"> </i>
+<p *ngIf="timeDifference">Time since last refresh: {{ timeDifference }} minutes</p>
+<h2 style="text-align: center;">Schedules</h2>
+<p-table [value]="schedules" [tableStyle]="{ 'min-width': '50rem' }">
+  <ng-template pTemplate="header" id="header">
+      <tr>
+          <th>S.No</th>
+          <th>Source Airport</th>
+          <th>Destination Airport</th>
+          <th>Arrival Time</th>
+          <th>Departure Time</th>
+          <th>Available Seats</th>
+          <th>Base price</th>
+          <th>Flight</th>
+          <!-- <th>Status</th> -->
+          <th>Edit</th>
+          <th>Delete</th>
+          <th>Booking History</th>
+      </tr>
+  </ng-template>
+  <ng-template pTemplate="body" let-schedule>
+      <tr>
+          <td>{{getSerialNumber(schedule)}}</td>
+          <td>{{ schedule.source_airport.city }}</td>
+          <td>{{ schedule.destination_airport.city }}</td>
+          <td>{{schedule.arrival_time}}</td>
+          <td>{{schedule.departure_time}}</td>
+          <td>{{schedule.available_seats}}</td>
+          <td>{{schedule.base_price}}</td>
+          <td>{{schedule.flight.flight_number}}</td>
+          <!-- <td>{{schedule.status}}</td> -->
+          <td><mat-icon type="button"  class='material-icons-outlined icon' color="primary"  (click)="loadEditSchedulePage(schedule.id)">edit</mat-icon></td>
+          <td> <p-toast></p-toast>
+            <p-confirmPopup></p-confirmPopup>
+            <mat-icon type="button"   (click)="confirm($event,schedule.id)" class='material-icons-outlined icon' [ngStyle]="{'color':'red'}"  >delete</mat-icon></td>
+          <td> <mat-icon type="button"   (click)="loadBookingHistoryPage(schedule.id)" class='material-icons-outlined icon' [ngStyle]="{'color':'red'}"  >history</mat-icon></td>
+          </tr>
+    </ng-template>
+</p-table>

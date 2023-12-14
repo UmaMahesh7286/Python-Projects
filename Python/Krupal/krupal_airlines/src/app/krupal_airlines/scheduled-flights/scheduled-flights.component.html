@@ -1,0 +1,63 @@
+
+<app-flight-loader *ngIf="!showSearchComponent"></app-flight-loader>
+
+
+<div *ngIf="showSearchComponent">
+  <krupal-header style="z-index: 5;position: fixed;width: 100%;"></krupal-header>
+  <div class="main">
+    <ng-container *ngIf="flights && flights.length > 0; else noFlights">
+      <div *ngFor="let flight of flights" class="flight-pair d-flex">
+        <div class="flight-info">
+          <div class="icon-container">
+            <i class="fas fa-map-marker-alt"></i>
+          </div>
+          <div>
+
+            <h4 class="terminal">{{ flight.source_airport.city }} </h4>
+            <h4 class="time">{{ flight.departure_time | date:'hh:mm a':'+0530' }}</h4>
+          </div>
+        </div>
+        <div class="info">
+          <div class="firstLine">
+
+          </div>
+          <span class="image-container">
+            <h4 class="time" style="font-size: 13px;
+            letter-spacing: 0.29px;">{{ calculateTimeDifference(flight.departure_time, flight.arrival_time) }}Hrs</h4>
+            <i class="fa fa-plane" aria-hidden="true"></i>
+          </span>
+          <div class="secondLine">
+
+          </div>
+        </div>
+
+        <div class="flight-info">
+          <div class="icon-container">
+            <i class="fas fa-map-marker-alt"></i>
+          </div>
+          <div>
+
+            <h5 class="terminal">{{ flight.destination_airport.city }} </h5>
+            <h4 class="time">{{ flight.arrival_time | date:'hh:mm a':'+0530'}}</h4>
+          </div>
+        </div>
+        <div class="info1">
+          <h3 class="price">₹{{ flight.base_price }}</h3>
+          <button mat-raised-button type="submit" style="border-top-left-radius: 10px;border-bottom-left-radius: 10px;border-bottom-right-radius: 10px;border-top-right-radius: 0px;height: 4em;float: right;;
+                          width: 10em;background-color: #0fbcbf; "><span style="font-size: large;
+      font-weight: 500;"(click)="routeit()">Select</span></button>
+        </div>
+      </div>
+    </ng-container>
+    <ng-template #noFlights>
+      <div class="no-flights">
+        <div>
+          <img src="https://th.bing.com/th/id/OIP.1HwapSQh8HM4uf7MB1pb6QHaH6?w=168&h=180&c=7&r=0&o=5&dpr=1.1&pid=1.7"
+            alt="No flights available" />
+        </div>
+        <h2>sorry ! no flights are avalible</h2>
+      </div>
+    </ng-template>
+  </div>
+  <div><krupal-footer></krupal-footer></div>
+</div>

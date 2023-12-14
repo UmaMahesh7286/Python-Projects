@@ -1,0 +1,27 @@
+<h2 style="margin-left: 25%;">Flights</h2>
+<p-table [value]="flights" [tableStyle]="{ 'min-width': '50rem' }">
+  <ng-template pTemplate="header" id="header">
+      <tr>
+          <th>S.No</th>
+          <th>Flight Number</th>
+          <th>Seating Capacity</th>
+          <!-- <th>Status</th> -->
+          <th>Edit</th>
+          <th>Delete</th>
+      </tr>
+  </ng-template>
+  <ng-template pTemplate="body" let-flight  >
+      <tr>
+          <td>{{getSerialNumber(flight)}}</td>
+          <td>{{ flight.flight_number }}</td>
+          <td>{{ flight.seating_capacity }}</td>
+          <!-- <td>{{flight.status}}</td> -->
+          <td><mat-icon type="button"  class='material-icons-outlined icon' color="primary"  (click)="loadEditFlightPage(flight.id)">edit</mat-icon></td>
+          <!-- <td><mat-icon type="button"  class='material-icons-outlined icon' [ngStyle]="{'color':'red'}"  (click)="loadDeleteAirportPage(flight.id)">delete</mat-icon></td> -->
+          <td> <p-toast></p-toast>
+            <p-confirmPopup></p-confirmPopup>
+            <mat-icon type="button"   (click)="confirm($event,flight.id)" class='material-icons-outlined icon' [ngStyle]="{'color':'red'}"  >delete</mat-icon></td>
+        </tr>
+    </ng-template>
+</p-table>
+

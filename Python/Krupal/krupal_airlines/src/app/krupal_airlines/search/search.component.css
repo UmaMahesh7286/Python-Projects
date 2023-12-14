@@ -1,0 +1,141 @@
+* {
+  box-sizing: border-box;
+  border: 0 solid #e5e7eb;
+}
+
+.outer {
+  width: 100%;
+  position: relative;
+  top: -2em;
+  margin-bottom: -6em;
+  z-index: 1;
+}
+
+.searchPanel {
+  width: 80%;
+  top: -2em;
+  margin: 1em auto;
+  background: #fff;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.288);
+  border-radius: 16px 0 16px 16px;
+  border: none;
+  z-index: 2;
+
+}
+
+.searchPanel_tablist {
+  box-shadow: 0 4px 10px rgba(0, 0, 0, .1);
+  border-radius: 16px 0 0 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.searchPanel_tablist1 {
+  cursor: pointer;
+  width: 15em;
+}
+
+p {
+  display: block;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  color: #0fbcbf !important;
+}
+
+.searchPanel_tabText {
+  font-weight: 600 !important;
+  font-size: 18px !important;
+  line-height: 20px !important;
+  text-align: center !important;
+}
+
+.flightSearchPanel_header{
+  font-size: larger;
+  font-weight: 500;
+}
+.searchpanel_tab_border {
+  height: 3px;
+  width: 15em;
+  background: #0fbcbf;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, .1);
+  margin-bottom: 0;
+}
+
+.searchPanel_body {
+  padding: 1.8em 1.5em 1.5em;
+  align-items: center;
+  justify-content: center;
+}
+
+.mat-radio-label {
+  margin: 0.5rem 1rem;
+}
+
+.bookingSearch_upper {
+  flex-wrap: wrap;
+  display: flex;
+  gap: 2em 4em;
+  margin-top: 1em;
+
+}
+
+.searchLocation {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  align-items: end;
+}
+
+.example-full-width {
+  width: 80%;
+}
+
+::ng-deep .mat-radio-button.mat-accent .mat-radio-ripple .mat-ripple-element {
+  background-color: #0fbcbf;
+}
+
+::ng-deep .mat-radio-button.mat-accent .mat-radio-inner-circle {
+  background-color: #0fbcbf !important;
+}
+
+::ng-deep.mat-radio-button.mat-accent.mat-radio-checked .mat-radio-outer-circle {
+  border-color: #0fbcbf !important;
+}
+
+
+::ng-deep .mat-form-field-appearance-fill .mat-form-field-flex {
+  background-color: white;
+}
+
+
+mat-datepicker-toggle {
+  color: #0fbcbf !important;
+}
+
+.passengersCount{
+  padding-top: 1rem;
+}
+
+.form {
+  min-width: 150px;
+  max-width: 500px;
+  width: 100%;
+}
+
+.width {
+  width: 100%;
+}
+
+.mat-button-wrapper {
+  color: #0fbcbf;
+}
+
+.bookingSearch_lower{
+  margin-top: 1.5rem;
+  display: flex;
+  justify-content: center;
+
+}

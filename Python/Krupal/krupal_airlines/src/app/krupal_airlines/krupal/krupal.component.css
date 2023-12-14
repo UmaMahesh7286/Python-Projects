@@ -1,0 +1,61 @@
+
+img {
+  filter: brightness(100%);
+}
+
+.carousel-item {
+  position: relative;
+  display: none;
+  float: left;
+  width: 100%;
+  margin-right: -100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  transition: transform .5s ease-in-out;
+}
+
+carousel-item-next,
+.carousel-item-prev,
+.carousel-item.active {
+  display: block;
+}
+
+.cities {
+  margin-top: 8rem;
+}
+
+.heading1>p {
+  font-size: 32px;
+  font-weight: 700;
+  margin: 24px 0px;
+  padding-left: 4rem;
+}
+
+.card{
+  width: 22%;
+}
+.citybody{
+  display: flex;
+  gap: 2em;
+  padding: 25px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.owl-theme .owl-nav.disabled+.owl-dots {
+  margin-top: -38px;
+}
+
+.outer[_ngcontent-whd-c130] {
+  width: 100%;
+  position: relative;
+  top: -5em;
+  margin-bottom: -6em;
+  z-index: 1;
+}
+.search{
+  margin-top: -13vh;
+}
+
+
+
+

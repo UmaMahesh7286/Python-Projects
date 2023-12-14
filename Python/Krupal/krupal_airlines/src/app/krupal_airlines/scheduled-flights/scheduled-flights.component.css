@@ -1,0 +1,95 @@
+.main {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 5rem;
+  padding-top: 10em;
+  width: 100%;
+  gap: 2rem;
+}
+
+.flight-pair {
+  display: flex;
+  align-items: center;
+  margin-right: 20px;
+  border: 1px solid #ddd;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+  padding: 10px;
+  background-color: #fff;
+  width: 100%;
+  gap: 2rem;
+}
+
+.price {
+  padding-top: 10px;
+}
+
+.flight-info,
+.info {
+  text-align: center;
+}
+
+.time,
+.duration,
+.stops,
+.terminal,
+.price {
+  margin: 0;
+}
+
+.image-container {
+  width: fit-content;
+  display: block;
+  justify-content: center;
+  height: fit-content;
+}
+
+
+.image-container img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+.info {
+  display: flex;
+  gap: 1rem;
+  width: 40%;
+}
+
+.info1 {
+  display: flex;
+  gap: 1rem;
+  width: fit-content;
+  padding-left: 5rem;
+}
+
+.no-flights {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 50vh;
+  margin-left: 15rem;
+
+}
+
+.listofFlights_flightStatusSection__ruRsb {
+  display: flex !important;
+  flex-direction: row !important;
+  gap: 6px !important;
+  text-align: center;
+}
+
+.time {
+  font-size: initial;
+  font-weight: initial;
+}
+
+.firstLine,
+.secondLine {
+  height: 2px;
+  width: 22rem;
+  background: #a09595;
+  margin-top: 24px;
+}

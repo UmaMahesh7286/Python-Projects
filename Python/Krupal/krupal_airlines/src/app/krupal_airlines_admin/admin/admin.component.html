@@ -1,0 +1,17 @@
+<nav class="navbar navbar-light bg-light" style="background: linear-gradient(to right, #f0f3f3, #317ACA);">
+  <a class="navbar-brand" href="#" style="margin-left: 10vh;">
+      <img  height="55"  alt=""  >
+  </a>
+  <button mat-raised-button (click)="logout()" *ngIf="service.isloggedin()">Logout  <i class="fa-solid fa-right-from-bracket"></i></button>
+</nav>
+<app-sidenav (onToggleSideNav)="onToggleSideNav($event)"></app-sidenav>
+
+<!-- <app-body
+    [collapsed]="isSideNavCollapsed"
+    [screenWidth]="screenWidth"
+></app-body> -->
+<!-- <p>body works!</p> -->
+<div class="body" [ngClass]="getBodyClass()">
+  <router-outlet></router-outlet>
+</div>
+

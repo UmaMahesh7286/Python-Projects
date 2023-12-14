@@ -1,0 +1,72 @@
+<nav class="navbar navbar-light bg-light" style="background: linear-gradient(to right, #f0f3f3, #0fbcbf);">
+  <div class="container d-flex justify-content-between">
+      <a class="navbar-brand" href="#">
+          <img src="../../../assets/images/logo-no-background.png" height="55"  alt="">
+      </a>
+      <div class="button-container ml-auto">
+          <div class="dropdown">
+              <button class="btn dropdown-toggle" type="button" id="dropdownMenuA" data-toggle="dropdown"
+                  aria-haspopup="true" aria-expanded="false">
+                  <i class="fas fa-plus"></i> Book
+
+              </button>
+              <div class="dropdown-menu" aria-labelledby="dropdownMenuA">
+                  <a class="dropdown-item" href="#">Option A1</a>
+                  <a class="dropdown-item" href="#">Option A2</a>
+                  <a class="dropdown-item" href="#">Option A3</a>
+              </div>
+          </div>
+          <div class="dropdown">
+              <button class="btn dropdown-toggle" type="button" id="dropdownMenuB" data-toggle="dropdown"
+                  aria-haspopup="true" aria-expanded="false">
+                  <i class="fas fa-tasks"></i> Manage Booking
+              </button>
+              <div class="dropdown-menu" aria-labelledby="dropdownMenuB">
+                  <a class="dropdown-item" href="#">Option B1</a>
+                  <a class="dropdown-item" href="#">Option B2</a>
+                  <a class="dropdown-item" href="#">Option B3</a>
+              </div>
+          </div>
+          <div class="dropdown">
+              <button class="btn dropdown-toggle" type="button" id="dropdownMenuC" data-toggle="dropdown"
+                  aria-haspopup="true" aria-expanded="false">
+                  <i class="fas fa-check"></i> Check-in
+              </button>
+              <div class="dropdown-menu" aria-labelledby="dropdownMenuC">
+                  <a class="dropdown-item" href="#">Option C1</a>
+                  <a class="dropdown-item" href="#">Option C2</a>
+                  <a class="dropdown-item" href="#">Option C3</a>
+              </div>
+          </div>
+          <div class="dropdown">
+              <button class="btn dropdown-toggle" type="button" id="dropdownMenuD" data-toggle="dropdown"
+                  aria-haspopup="true" aria-expanded="false">
+                  <i class="fas fa-plus"></i> Add-ons
+              </button>
+              <div class="dropdown-menu" aria-labelledby="dropdownMenuD">
+                  <a class="dropdown-item" href="#">Option D1</a>
+                  <a class="dropdown-item" href="#">Option D2</a>
+                  <a class="dropdown-item" href="#">Option D3</a>
+              </div>
+          </div>
+          <div class="dropdown">
+              <button class="btn dropdown-toggle" type="button" id="dropdownMenuE" data-toggle="dropdown"
+                  aria-haspopup="true" aria-expanded="false">
+                  <i class="fas fa-hands-helping"></i> Support
+              </button>
+              <div class="dropdown-menu" aria-labelledby="dropdownMenuE">
+                  <a class="dropdown-item" href="#">Option E1</a>
+                  <a class="dropdown-item" href="#">Option E2</a>
+                  <a class="dropdown-item" href="#">Option E3</a>
+              </div>
+          </div>
+          <div class="dropdown"  >
+              <button class="btn " type="button"  (click)="gotologin()" *ngIf="!service.isloggedin()">
+              <i class="fas fa-user"></i>
+                 Login
+              </button>
+              <button mat-raised-button (click)="logout()" *ngIf="service.isloggedin()">Logout  <i class="fa-solid fa-right-from-bracket"></i></button>
+          </div>
+      </div>
+  </div>
+</nav>

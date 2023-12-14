@@ -1,0 +1,24 @@
+footer ol li {
+    padding-top: 10px;
+}
+
+.copyright-sec {
+    height: 80px;
+    align-content: center;
+    background-color: rgb(30, 220, 227);
+}
+
+.ft-kp {
+    color: rgb(87, 56, 10);
+}
+
+.privacy {
+    color: rgb(201, 241, 241);
+}
+
+.logos-downd {
+
+    height: 70px;
+    margin-right: 10px;
+    background-color: rgb(208, 222, 224);
+}

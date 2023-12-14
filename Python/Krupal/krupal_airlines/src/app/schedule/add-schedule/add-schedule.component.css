@@ -1,0 +1,31 @@
+/* .card{
+  max-width: 40rem;
+
+  margin-left: 15rem;
+  margin-top: 5rem;
+  height: 505px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+} */
+/* button .submit{
+  padding: 0.5rem;
+} */
+
+
+
+.labelname{
+  margin-top: 0.6rem;
+}
+.text-center{
+  margin: 10px;
+}
+/* .dropdown{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+} */
+.disabled-airport {
+  color: gray;
+  pointer-events: none;
+}

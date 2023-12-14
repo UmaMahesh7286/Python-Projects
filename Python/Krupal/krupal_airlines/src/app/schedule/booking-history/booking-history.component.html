@@ -1,0 +1,24 @@
+<p-table [value]="bookinghistorys" [tableStyle]="{ 'min-width': '50rem' }">
+  <ng-template pTemplate="header" id="header">
+    <tr>
+      <th>Booking History Id</th>
+      <th>No Of Tickets Booked</th>
+      <th>Date of Booking</th>
+      <th>Available Tickets</th>
+      <th>Schedule Id</th>
+      <th>Days Left</th>
+    </tr>
+  </ng-template>
+  <ng-template pTemplate="body" let-bh>
+    <tr>
+      <td>{{bh.booking_history_id}}</td>
+      <td>{{bh.no_of_tickets_booked}}</td>
+      <td>{{bh.date}}</td>
+      <td>{{bh.available_tickets}}</td>
+      <td>{{bh.schedule_id}}</td>
+      <td>{{bh.days_left}}</td>
+    </tr>
+  </ng-template>
+</p-table>
+
+

@@ -1,0 +1,31 @@
+<mat-card color="primary" class="card mat-elevation-z8" >
+  <form class="example-form" [formGroup]="myForm" (ngSubmit)="editFlight()">
+    <mat-card-content>
+      <h2 style="text-align: center">Edit Flight</h2>
+      <div class="form-group">
+        <div class="row">
+          <div class="col-75 form-group labelname">
+            <label for="flight" style="margin-right: 10px">Flight Number:</label>
+          </div>
+          <div class="col-75 form-group">
+            <input class="form-control" type="number" formControlName="flight_number" placeholder="Enter number" />
+            <span class="text-danger" *ngIf="(f.flight_number.touched || submitted) && f.flight_number.errors?.required">Flight number required</span>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-75 form-group labelname">
+            <label for="flight" style="margin-right: 10px">Seating Capacity:</label>
+          </div>
+          <div class="col-75 form-group">
+            <input class="form-control" type="number" formControlName="seating_capacity" placeholder="Enter capacity" />
+            <span class="text-danger" *ngIf="(f.seating_capacity.touched || submitted) && f.seating_capacity.errors?.required">Seating Capacity is required</span>
+          </div>
+        </div>
+        <div class="text-center">
+          <p-toast position="top-center"></p-toast>
+          <input class="btn btn-success btn-sm submit" type="submit" value="Update Flight" />
+        </div>
+      </div>
+    </mat-card-content>
+  </form>
+</mat-card>
