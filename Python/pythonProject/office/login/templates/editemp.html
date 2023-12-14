@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>CORENUTS OFFICE</title>
+</head>
+<body>
+ {% if emp %}
+   <br><br>
+<div style="margin-left:420px; width:450px; height:450px; background-color: cadet blue ;padding-left:50px;">
+    <br><br>
+
+    <h2 STYLE="margin-left:100px">Edit Your Details</h2>
+        <form action="/profile" method="post">
+            {% csrf_token %}
+        <table>
+        <tr>
+        <td><label>EMPLOYEE NAME :  </label></td>
+        <td><input  type="text" name="empName" id="empName" value={{emp.empName}}></td>
+        </tr>
+         <tr>
+         <td><label>EMPLOYEE DESIGNATION :  </label></td>
+        <td><input  type="text"  name="designation" id="designation"  value={{emp.designation}}></td>
+       </tr>
+            <tr>
+        <td> <label>EMPLOYEE EMAIL :  </label></td>
+        <td><input  type="email" name="email" id="email" value={{emp.email}}></td>
+        </tr>
+         <tr>
+         <td> <label>PASSWORD :  </label></td>
+        <td><input  type="password" name="password1" id="password1" value={{emp.password}}></td>
+       </tr>
+             {% else %}
+            {% endif  %}
+        </table>
+        <br><br>
+        <button style="margin-left:20px;" type="submit">Save </button>
+        </form>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CORENUTS OFFICE</title>
+</head>
+<body>
+<h1 style="color:grey; margin-left:340px">WELCOME TO CORENUTS OFFICE</h1>
+
+<div style="display:flex">
+    <div style="width:700px; height:450px; background-color:aliceblue;">
+         <h2>EMPLOYEE LOGIN</h2>
+        <label>Date :  </label>
+        <input  type="date"  >
+        <br><br>
+        <form action="/profile" method="post">
+             {% csrf_token %}
+        <label>Employee Id :  </label>
+        <input  type="number" name="id"  id="id">
+            <br><br>
+        <label>Password :  </label>
+        <input  type="password" name="password" id="password">
+        <br><br>
+        <button >Login </button>
+        <div style="margin-top:200px"><a type="button" href="/viewallemp" style="background-color:papayawhip;">View All Employees</a>
+        <a type="button" href="/filteremp" style="background-color:papayawhip;margin-left:400px ">Filter Employees</a>
+        </div>
+        </form>
+    </div>
+    <div style="margin-left:30px; width:450px; height:450px; background-color:cadetblue;padding-left:50px;">
+      <h2>Add New Employee</h2>
+        <form action="/profile" method="post">
+            {% csrf_token %}
+        <table>
+            <tr>
+        <td><label >EMPLOYEE NAME :  </label></td>
+        <td><input  type="text" name="empName" id="empName"></td>
+        </tr>
+         <tr>
+         <td><label>EMPLOYEE DESIGNATION :  </label></td>
+        <td><input  type="text" name="designation" id="designation" ></td>
+       </tr>
+            <tr>
+        <td> <label>EMPLOYEE EMAIL :  </label></td>
+        <td><input  type="email" name="email" id="email" ></td>
+        </tr>
+         <tr>
+         <td> <label>PASSWORD :  </label></td>
+        <td><input  type="password" name="password1" id="password1"></td>
+       </tr>
+        </table>
+        <br><br>
+        <button style="margin-left:20px;" type="reset">Reset </button>
+        <button style="margin-left:200px;" type="submit"> Add Employee </button>
+    </form>
+    </div>
+</div>
+
+
+</body>
+</html>
+<!--onclick="location.href='/profile' "-->
